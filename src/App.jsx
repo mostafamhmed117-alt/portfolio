@@ -186,10 +186,10 @@ export default function Portfolio() {
         @media (max-width: 1024px), (pointer: coarse) {
           .cursor-glow { display: none; }
         }
-        @media(max-width:768px){.desktop-only{display:none!important}.mobile-menu-btn{display:flex!important}.nav-links{gap:12px!important}.nav-links span{font-size:11px!important}}
-        @media(max-width:560px){.nav-links{gap:8px!important}.nav-links span{font-size:10px!important}}
+        @media(max-width:768px){.desktop-only{display:none!important}.mobile-menu-btn{display:flex!important}.nav-links{display:none!important}}
         .mobile-menu-btn{display:none}
-        @media(max-width:560px){.project-grid{grid-template-columns:1fr!important}.exp-grid{grid-template-columns:1fr 1fr!important}}
+        @media(max-width:920px){.project-grid{grid-template-columns:1fr!important}}
+        @media(max-width:560px){.exp-grid{grid-template-columns:1fr 1fr!important}}
         @media(max-width:380px){.exp-grid{grid-template-columns:1fr!important}}
       `}</style>
 
@@ -205,7 +205,7 @@ export default function Portfolio() {
           {/* Logo */}
           <span style={{ fontSize: "19px", fontWeight: "700", letterSpacing: "-0.3px", userSelect: "none" }}>
             <span style={{ color: "#2563EB" }}>&lt;</span>
-            Moustafa Muhammed Ahmed
+            MMA
             <span style={{ color: "#2563EB" }}> /&gt;</span>
           </span>
 
@@ -311,9 +311,9 @@ export default function Portfolio() {
       <section id="about" style={{ padding: "100px 5%", background: "#0B1120" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <SectionTitle title="About Me" subtitle="Get to know me" />
-          <div className="reveal" style={{ display: "flex", gap: "60px", flexWrap: "wrap", alignItems: "flex-start", marginTop: "64px" }}>
+          <div className="reveal" style={{ display: "flex", gap: "60px", flexWrap: "wrap", alignItems: "stretch", marginTop: "64px" }}>
             {/* Bio */}
-            <div style={{ flex: "1", minWidth: "280px", background: "#0F1829", border: "1px solid rgba(37,99,235,0.2)", borderRadius: "16px", padding: "32px 28px", display: "flex", flexDirection: "column", gap: "22px" }}>
+            <div style={{ flex: "1.2", minWidth: "280px", background: "#0F1829", border: "1px solid rgba(37,99,235,0.2)", borderRadius: "16px", padding: "32px 28px", display: "flex", flexDirection: "column", gap: "22px" }}>
               <p style={{ fontSize: "16px", color: "#94A3B8", lineHeight: "1.9" }}>
                 I'm <span style={{ color: "#F1F5F9", fontWeight: "600" }}>Moustafa Muhammed Ahmed</span>, a Computer Engineering student passionate about backend development using C# and the .NET ecosystem.
               </p>
@@ -328,17 +328,17 @@ export default function Portfolio() {
             </div>
 
             {/* Quick stats */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
+            <div style={{ flex: "1", minWidth: "280px", display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "1fr 1fr", gap: "16px" }}>
               {[
                 { val: "🎓", sub: "Student", label: "Computer Engineering" },
                 { val: ".NET", sub: "Focus", label: "Backend Dev" },
                 { val: "2+", sub: "Projects", label: "Completed" },
                 { val: "7+", sub: "Certificates", label: "Earned" },
               ].map((s, i) => (
-                <div key={i} className="hover-lift" style={{ background: "#0F1829", border: "1px solid rgba(37,99,235,0.18)", borderRadius: "16px", padding: "24px 20px", textAlign: "center", minWidth: "120px" }}>
-                  <div style={{ fontSize: "28px", fontWeight: "700", color: "#2563EB", marginBottom: "4px" }}>{s.val}</div>
-                  <div style={{ fontSize: "11px", color: "#60A5FA", fontWeight: "700", textTransform: "uppercase", letterSpacing: "1px" }}>{s.sub}</div>
-                  <div style={{ fontSize: "11px", color: "#475569", marginTop: "4px" }}>{s.label}</div>
+                <div key={i} className="hover-lift" style={{ background: "#0F1829", border: "1px solid rgba(37,99,235,0.2)", borderRadius: "16px", padding: "24px 20px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
+                  <div style={{ fontSize: "30px", fontWeight: "700", color: "#2563EB", marginBottom: "6px" }}>{s.val}</div>
+                  <div style={{ fontSize: "12px", color: "#60A5FA", fontWeight: "700", textTransform: "uppercase", letterSpacing: "1px" }}>{s.sub}</div>
+                  <div style={{ fontSize: "11.5px", color: "#475569", marginTop: "4px" }}>{s.label}</div>
                 </div>
               ))}
             </div>
